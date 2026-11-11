@@ -128,11 +128,11 @@ Confidence: 4/5. The core rules are tested. Times are plain "HH:MM" strings, so 
 
 Run it with `streamlit run app.py`.
 
-1. Set the owner name and how many minutes are available today.
-2. Add a pet with name, species and age. Duplicate or empty names show an error.
-3. Add tasks for a pet: description, start time, duration, priority and how often it repeats.
-4. The task table shows today's tasks in time order. Filter it by pet or by open/done.
-5. Pick a task and click "Mark done". If it repeats, the next one is added for tomorrow or next week.
-6. Click "Generate schedule". The plan lists the chosen tasks with why each one is there, warns about time conflicts, and says which tasks were skipped because time ran out.
+1. The top row shows pets, tasks today, tasks done and free minutes. On an empty app, "Load demo data" adds two pets and five tasks.
+2. **Pets tab:** set the owner name and minutes available today, then add pets. Empty or duplicate names show an error.
+3. **Tasks tab:** add a task for a pet with start time, duration, priority and how often it repeats. The table below shows today's tasks in time order and can be filtered by pet and by open/done.
+4. **Today's plan tab:** a progress bar shows how much of the available time is used. Time conflicts show as warnings. Each planned task has a priority badge and a "Done" button.
+5. Clicking "Done" on a daily or weekly task adds the next one for tomorrow or next week.
+6. Tasks that didn't fit in the available time are listed under "Skipped" with the reason.
 
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or link to a demo video here -->
