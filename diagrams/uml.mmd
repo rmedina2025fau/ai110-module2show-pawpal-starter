@@ -1,6 +1,7 @@
 classDiagram
     class Owner {
         +str name
+        +int available_minutes
         +list~Pet~ pets
         +add_pet(pet) None
         +get_pet(name) Pet
@@ -26,15 +27,24 @@ classDiagram
         +str pet_name
         +bool completed
         +mark_complete() None
+        +next_occurrence() Task
+        +end_minutes() int
     }
 
     class Scheduler {
         +Owner owner
         +tasks_for(day) list~Task~
+        +sort_by_time(tasks) list~Task~
+        +filter_tasks(tasks, pet_name, completed) list~Task~
         +todays_schedule(day) list~Task~
+        +build_plan(day) tuple
+        +explain(task) str
+        +detect_conflicts(tasks) list~str~
+        +complete_task(task) Task
         +format_schedule(tasks) str
     }
 
     Owner "1" o-- "*" Pet : has
     Pet "1" *-- "*" Task : has
     Scheduler --> Owner : reads tasks from
+    Task ..> Task : next_occurrence creates
